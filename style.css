@@ -1,0 +1,224 @@
+:root {
+    /* Color */
+    --dark-blue: hsl(240, 38%, 20%);
+    --grayish-blue: hsl(240, 18%, 77%);
+
+    /* Font Weight */
+    --lt: 300;
+    --md: 500;
+    --bd: 700;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--dark-blue);
+}
+
+.slide {
+    display: none;
+    height: 0;
+    width: 100vw;
+    text-align: center;
+}
+
+.active {
+    display: block;
+    height: 100vh;
+    padding-top: 54px;
+}
+
+.profile {
+    display: inherit;
+    margin: auto;
+    width: 254px;
+    height: 254px;
+    border-radius: 5px;
+    box-shadow: -20px 62px 48px -65px hsla(240, 37.3%, 20%, 0.76)
+}
+
+
+.person {
+    position: absolute;
+    top: 50%;
+    transform:translateY(60px);
+    font-size: 16px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.person .quote {
+    font-weight: var(--lt);
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 18px;
+}
+
+.person .name {
+    font-weight: var(--bd);
+}
+
+.person .occupation {
+    font-family: var(--md);
+    color: var(--grayish-blue);
+}
+
+.attribution { 
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.nav-button {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    z-index: 1;
+    top: 288px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    width: 80px;
+    border-radius: 20px;
+    background-color: white;
+    padding-bottom: 7px;
+}
+
+.nav-button #prev {
+    border-radius: 50% 0 0 50%;
+    background-color: none;
+}
+
+.nav-button #next {
+    border-radius: 0 50% 50% 0;
+    background-color: none;
+}
+
+
+
+button {
+    border: none;
+}
+
+#pattern {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+}
+
+#pattern #bg {
+    position: inherit;
+    left: 50%;
+    transform: translateX(-50%) translateX(2px) translateY(24px);
+    width: 329px;
+    height: 302px;
+    background-image: url(images/pattern-bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#pattern #quotes {
+    position: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateX(2px) translateY(32px);
+    width: 60px;
+    height: 50px;
+    background-image: url(images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#pattern #curve {
+    position: inherit;
+    bottom: 0;
+    width: 286px;
+    height: 72px;
+    background-image: url(images/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media screen and (min-width: 1440px) {
+    #pattern #bg {
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%) translateX(280px);
+        width: 697px;
+        height: 657px;
+    }
+
+    #pattern #quotes {
+        width: 120px;
+        height: 100px;
+        transform: translateY(-50%) translateX(-50%) translateX(-400px) translateY(-117px);
+    }
+
+    #pattern #curve {
+        width: 610px;
+        height: 154px;
+    }
+
+    .active {
+        height: 540px;
+        padding-top: 0px;
+    }
+
+    .profile {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%) translateX(280px);
+        margin: 0;
+        width: 540px;
+        height: 540px;
+    }
+
+    .person {
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%) translateX(-240px);
+        margin: 0;
+        width: 630px;
+        height: 540px;
+        padding-top: 170px;
+        text-align: left;
+        font-size: 24px;
+    }
+
+    .person .quote {
+        font-size: 30px;
+        margin-bottom: 37px;
+        line-height: 40px;
+    }
+
+    .nav-button {
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%) translateX(128px) translateY(272px);
+        width: 112px;
+        height: 56px;
+        border-radius: 28px;
+        align-items: flex-start;
+        padding-top: 18px;
+    }
+
+
+}
